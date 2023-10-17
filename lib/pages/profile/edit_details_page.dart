@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'editDetails/details.dart';
+import 'editDetails/photo_page.dart';
 
 class EditDetails extends StatefulWidget {
   const EditDetails({super.key});
@@ -11,9 +13,51 @@ class EditDetails extends StatefulWidget {
 class _EditDetailsState extends State<EditDetails> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Text('EditDetails',style: TextStyle(color: Colors.cyan,fontSize: 35),),
+    return DefaultTabController(
+      length: 2,
+      child: Scaffold(
+       appBar: AppBar(
+         title: Row(
+           mainAxisAlignment: MainAxisAlignment.center,
+           children: const [
+             Text('Profile',style: TextStyle(color: Colors.white,fontSize: 24,fontWeight: FontWeight.bold),),
+             SizedBox(width: 60)
+           ],
+         ),
+         bottom:  const TabBar(
+             physics: ScrollPhysics(),
+             isScrollable: true,
+             indicatorColor: Colors.white,
+             unselectedLabelStyle: TextStyle(
+                 color: Colors.white,
+                 fontWeight: FontWeight.normal,
+                 fontSize: 18),
+             labelStyle: TextStyle(
+                 color: Colors.white,
+                 fontWeight: FontWeight.bold,
+                 fontSize: 20),
+             tabs:[
+               Tab(
+                 child: Text(
+                   "Photo",
+                   style: TextStyle(color: Colors.white),
+                 ),
+               ),
+               Tab(
+                 child: Text(
+                   "Details",
+                   style: TextStyle(color: Colors.white),
+                 ),
+               ),
+             ]
+         ),
+       ),
+        body: const TabBarView(
+          children: [
+            PhotoPage(),
+            DetailsPage()
+          ],
+        ),
       ),
     );
   }

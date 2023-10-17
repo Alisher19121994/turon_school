@@ -5,6 +5,8 @@ import 'package:turon_school/pages/mainScreens/main_page.dart';
 import 'package:turon_school/pages/mainScreens/pages/activities_page.dart';
 import 'package:turon_school/pages/mainScreens/pages/lesson_plan_page.dart';
 import 'package:turon_school/pages/mainScreens/pages/students_list.dart';
+import 'package:turon_school/pages/profile/editDetails/details.dart';
+import 'package:turon_school/pages/profile/editDetails/photo_page.dart';
 import 'package:turon_school/pages/profile/edit_details_page.dart';
 import 'package:turon_school/pages/profile/profile.dart';
 import 'package:turon_school/pages/profile/salary_page.dart';
@@ -31,6 +33,8 @@ class MyApp extends StatelessWidget {
         EditDetails.id: (context)=> const EditDetails(),
         SalaryPage.id: (context)=> const SalaryPage(),
         SignIn.id: (context)=> const SignIn(),
+        PhotoPage.id: (context)=> const PhotoPage(),
+        DetailsPage.id: (context)=> const DetailsPage(),
       },
     );
   }

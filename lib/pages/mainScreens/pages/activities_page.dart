@@ -11,13 +11,36 @@ class ActivityPage extends StatefulWidget {
 class _ActivityPageState extends State<ActivityPage> {
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.redAccent,
-      body: Center(
-        child: Text('ActivityPage',style: TextStyle(
-          color: Colors.blueAccent,fontSize: 35
-        ),),
+        appBar: AppBar(
+          title: Text('Turon',style: TextStyle(color: Colors.white,fontSize: 24,fontWeight: FontWeight.bold),),
+        ),
+    );
+  }
+
+  Widget lessonPlanResponse(){
+    var size = MediaQuery.of(context).size;
+    return Container(
+      margin: const EdgeInsets.all(4.0),
+      padding: const EdgeInsets.all(4.0),
+      height: size.height * 0.20,
+      child: ListView(
+        children: [
+          Container(
+            color: Colors.cyan,
+            height: size.height * 0.16,
+            width: size.width * 0.09,
+            child: Column(
+              children: [
+
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
+
 }
